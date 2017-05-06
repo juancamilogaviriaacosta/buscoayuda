@@ -19,7 +19,7 @@ def crearDesarrollador():
         desarrollador.save()
 
 def index(request):
-    crearDesarrollador()
+    #crearDesarrollador()
     trabajadores = Trabajador.objects.all()
     tipos_de_servicios = TiposDeServicio.objects.all()
     form_trabajador = TrabajadorForm(request.POST)
