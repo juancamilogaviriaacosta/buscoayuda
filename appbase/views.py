@@ -13,7 +13,15 @@ from django.contrib import messages
 from django.contrib import auth
 
 
+def crearDesarrollador():
+    if (TiposDeServicio.objects.all().count() == 0):
+        desarrollador = TiposDeServicio()
+        desarrollador.nombre = "Desarrollador Web"
+        desarrollador.imagen = "services/wa.jpeg"
+        desarrollador.save()
+
 def index(request):
+    crearDesarrollador()
     trabajadores = Trabajador.objects.all()
     tipos_de_servicios = TiposDeServicio.objects.all()
     form_trabajador = TrabajadorForm(request.POST)
